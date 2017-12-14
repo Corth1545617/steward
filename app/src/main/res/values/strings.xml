@@ -1,0 +1,43 @@
+<resources>
+    <!--general start-->
+    <string name="app_name">Rent Steward</string>
+    <string name="action_settings">Settings</string>
+    <!--general end-->
+
+    <!--welcome screen start-->
+    <string name="hello">Hello!! May I help you?</string>
+
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="show_user">Show User</string>
+    <string name="show_room">Show Room</string>
+    <!--welcome screen end-->
+
+    <!--sign up screen start-->
+    <string name="insert_account">Please insert your account.</string>
+    <string name="insert_name">Please insert your name.</string>
+    <string name="insert_birth">Please insert your birthday.</string>
+    <string name="enter_signup">Ready to sign up</string>
+    <string name="dialog_signup_title">Check your personal information.</string>
+    <string name="dialog_signup_warning">Do you want to sign up?</string>
+    <string name="dialog_signup_warning_success">Congradulations! You have signed up successfully!</string>
+    <string name="dialog_signup_warning_account_empty">User account shouldn\'t be empty!</string>
+    <string name="dialog_signup_warning_account_duplicate">The account had been signed up. Please insert another acoount!</string>
+    <string name="dialog_signup_warning_name_empty">User name shouldn\'t be empty!</string>
+    <string name="dialog_signup_warning_name_short">User name is too short!</string>
+    <!--sign up screen end-->
+
+    <!--show room start-->
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!--show room end-->
+
+    <!--custom dialog start-->
+    <string name="custom_dialog_ok">OK</string>
+    <string name="custom_dialog_cancel">Cancel</string>
+    <string name="custom_dialog_clear">Clear</string>
+    <string name="date">Date</string>
+    <!--custom dialog end-->
+
+</resources>

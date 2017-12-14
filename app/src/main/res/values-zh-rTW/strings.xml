@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--general start-->
+    <string name="app_name">測試</string>
+    <string name="action_settings">設定</string>
+    <!--general end-->
+
+    <!--welcome screen start-->
+    <string name="hello">您好！需要我的幫忙嗎？</string>
+
+    <string name="sign_up">我要註冊</string>
+    <string name="login">下載</string>
+    <string name="show_user">看名單</string>
+    <string name="show_room">看套房</string>
+    <!--welcome screen end-->
+
+    <!--sign up screen start-->
+    <string name="insert_account">請輸入您的帳號名稱</string>
+    <string name="insert_name">請輸入您的姓名</string>
+    <string name="insert_birth">請輸入您的生日</string>
+    <string name="enter_signup">確認註冊</string>
+    <string name="dialog_signup_title">確認註冊資訊</string>
+    <string name="dialog_signup_warning">請問是否確定送出？</string>
+    <string name="dialog_signup_warning_success">恭喜你註冊成功！</string>
+    <string name="dialog_signup_warning_account_empty">帳號欄不可為空！</string>
+    <string name="dialog_signup_warning_account_duplicate">此帳號已註冊，請重新輸入！</string>
+    <string name="dialog_signup_warning_name_empty">姓名欄不可為空！</string>
+    <string name="dialog_signup_warning_name_short">姓名太短！</string>
+    <!--sign up screen end-->
+
+    <!--show room start-->
+    <string name="title_home">首頁</string>
+    <string name="title_dashboard">公告</string>
+    <string name="title_notifications">通知</string>
+    <!--show room end-->
+
+    <!--custom dialog start-->
+    <string name="custom_dialog_ok">確定</string>
+    <string name="custom_dialog_cancel">取消</string>
+    <string name="custom_dialog_clear">清空</string>
+    <string name="date">日期</string>
+    <!--custom dialog end-->
+
+</resources>
