@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
 
 android {
     compileSdkVersion 25
@@ -42,4 +43,16 @@ dependencies {
 
     // Fast Android Networking
     compile 'com.amitshekhar.android:android-networking:1.0.0'
+
+    // Firebase sdks
+    compile 'com.google.firebase:firebase-core:11.8.0+' // Analytics
+    compile 'com.google.firebase:firebase-config:11.8.0+' // Remote Config
+    compile 'com.google.android.gms:play-services-base:11.8.0+'
+
+    // Crashlytics
+    compile 'com.crashlytics.sdk.android:crashlytics:2.9.1+'
+
+
 }
+
+apply plugin: 'com.google.gms.google-services'

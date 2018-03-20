@@ -17,6 +17,7 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.DownloadListener;
+import com.crashlytics.android.Crashlytics;
 import com.rent.steward.general.http.ApiCallback;
 import com.rent.steward.general.http.ApiService;
 import com.rent.steward.general.http.RetrofitFactory;
@@ -29,7 +30,6 @@ import java.io.IOException;
 import java.util.List;
 
 import okhttp3.ResponseBody;
-import retrofit2.Call;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -193,7 +193,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 try {
                     Log.i(TAG, "onSuccessResponse, " + response.string());
                 } catch (IOException e) {
-                    Log.i(TAG, "IOException: " + e.toString());
+                    Log.i(TAG, "IOException", e);
+                    Crashlytics.logException(e);
                 }
             }
 
@@ -202,7 +203,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 try {
                     Log.w(TAG, "onErrorResponse, " + response.string());
                 } catch (IOException e) {
-                    Log.w(TAG, "IOException: " + e.toString());
+                    Log.w(TAG, "IOException", e);
+                    Crashlytics.logException(e);
                 }
             }
 

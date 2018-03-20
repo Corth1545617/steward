@@ -3,6 +3,10 @@ package com.rent.steward;
 import android.app.Application;
 import android.util.Log;
 
+import com.crashlytics.android.Crashlytics;
+
+import io.fabric.sdk.android.Fabric;
+
 /**
  * Created by Corth1545617 on 2017/6/26.
  */
@@ -18,5 +22,9 @@ public class MyApplication extends Application {
 //        AndroidNetworking.initialize(getApplicationContext());
 //        Intent serviceIntent = new Intent(this, MyService.class);
 //        startService(serviceIntent);
+
+        // initializing Crashlytics
+        Fabric.with(this, new Crashlytics());
+
     }
 }

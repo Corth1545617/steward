@@ -39,6 +39,14 @@
             android:exported="true"
             android:process=":remote"/>
 
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="afbe9cde689eebda16ff920631f2e48dbf43128a" />
     </application>
+
+    <meta-data
+        android:name="io.fabric.ApiKey"
+        android:value="AIzaSyCPIAZQxu9YgSGsh6nBXntfRGR5uX2fsFY" />
+
 
 </manifest>
