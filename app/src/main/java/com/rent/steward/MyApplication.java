@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.crashlytics.android.Crashlytics;
+import com.rent.steward.general.RemoteConfigHelper;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -25,6 +26,9 @@ public class MyApplication extends Application {
 
         // initializing Crashlytics
         Fabric.with(this, new Crashlytics());
+
+        // Init remote config
+        RemoteConfigHelper.getInstance().init();
 
     }
 }

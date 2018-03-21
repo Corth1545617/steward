@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+import com.rent.steward.general.RemoteConfigHelper;
 import com.rent.steward.general.http.ApiCallback;
 import com.rent.steward.general.http.ApiService;
 import com.rent.steward.general.http.RetrofitFactory;
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /*** UI ***/
     private Toolbar mTb;
+    private TextView mTvGreeting;
     private Button mBnSignUp, mBnLogin, mBnShowUser, mBnCallApi;
 
     /*** Http ***/
@@ -51,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void findViewByRId(){
         mTb = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mTb);
+
+        mTvGreeting = (TextView) findViewById(R.id.greeting_textView);
+        mTvGreeting.setText(FirebaseRemoteConfig.getInstance().getString(getString(R.string.rckey_greeting)));
 
         mBnSignUp = (Button) findViewById(R.id.sign_up);
         mBnSignUp.setOnClickListener(this);
@@ -77,7 +82,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 frag.commit();
                 break;
             case R.id.login:
-                startDownload();
+//                startDownload();
+                RemoteConfigHelper.getInstance().updateRemoteConfig();
+                mTvGreeting.setText(FirebaseRemoteConfig.getInstance().getString(getString(R.string.rckey_greeting)));
                 break;
             case R.id.show_room:
                 Log.d(TAG, "show room");

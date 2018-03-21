@@ -40,4 +40,8 @@
     <string name="date">Date</string>
     <!--custom dialog end-->
 
+    <!--Remote Config Key-->
+    <string name="rckey_greeting">GREETINGS</string>
+
+
 </resources>
