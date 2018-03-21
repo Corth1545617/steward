@@ -8,9 +8,11 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import com.rent.steward.general.http.ApiCallback;
 import com.rent.steward.general.http.ApiService;
 import com.rent.steward.general.http.RetrofitFactory;
@@ -31,8 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /*** Constant ***/
 
     /*** UI ***/
-    private Toolbar toolbar;
-    private Button signUp_btn, login_btn, showUser_btn, callApi_btn;
+    private Toolbar mTb;
+    private Button mBnSignUp, mBnLogin, mBnShowUser, mBnCallApi;
 
     /*** Http ***/
     private ApiService apiService;
@@ -47,20 +49,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void findViewByRId(){
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        mTb = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mTb);
 
-        signUp_btn = (Button) findViewById(R.id.sign_up);
-        signUp_btn.setOnClickListener(this);
+        mBnSignUp = (Button) findViewById(R.id.sign_up);
+        mBnSignUp.setOnClickListener(this);
 
-        login_btn = (Button) findViewById(R.id.login);
-        login_btn.setOnClickListener(this);
+        mBnLogin = (Button) findViewById(R.id.login);
+        mBnLogin.setOnClickListener(this);
 
-        showUser_btn = (Button) findViewById(R.id.show_room);
-        showUser_btn.setOnClickListener(this);
+        mBnShowUser = (Button) findViewById(R.id.show_room);
+        mBnShowUser.setOnClickListener(this);
 
-        callApi_btn = (Button) findViewById(R.id.call_api);
-        callApi_btn.setOnClickListener(this);
+        mBnCallApi = (Button) findViewById(R.id.call_api);
+        mBnCallApi.setOnClickListener(this);
     }
 
     @Override
