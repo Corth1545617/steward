@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     /*** Http ***/
     private ApiService apiService;
-    private retrofit2.Call<ResponseBody> callApi;
+    private retrofit2.Call<List<Person>> callApi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.call_api:
-                sendApiRequest();
+                getAllUsersList();
                 break;
             default:
                 break;
@@ -124,18 +124,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startService(serviceIntent);
     }
 
-    private void sendApiRequest() {
-        callApi = apiService.postUserInfo();
-        callApi.enqueue(new ApiCallback<ResponseBody>(callApi) {
+    private void getAllUsersList() {
+        callApi = apiService.getUsers();
+        callApi.enqueue(new ApiCallback<List<Person>>(callApi) {
+
             @Override
-            public void onSuccessResponse(ResponseBody response, int statusCode) {
-                Toast.makeText(self, "onSuccessResponse", Toast.LENGTH_SHORT).show();
-                try {
-                    Log.i(TAG, "onSuccessResponse, " + response.string());
-                } catch (IOException e) {
-                    Log.i(TAG, "IOException", e);
-                    Crashlytics.logException(e);
-                }
+            public void onSuccessResponse(List<Person> response, int statusCode) {
+                Log.i(TAG, "onSuccessResponse, " + response.toString());
+
             }
 
             @Override
@@ -153,7 +149,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.w(TAG, "onApiException, " + t.toString());
             }
         });
+
+
     }
+
+
 
 
 }

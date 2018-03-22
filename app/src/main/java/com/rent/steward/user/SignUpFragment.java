@@ -154,7 +154,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener {
         String userName = name_et.getText().toString();
         String userBirth = getBirth();
 
-        Person person = new Person(account, userName, userBirth);
+        Person person = new Person(account, userName, userBirth, "f");
 
         // Add a new person record
 //        ContentValues values = new ContentValues();

@@ -1,5 +1,7 @@
 package com.rent.steward.user;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by Corth1545617 on 2017/6/5.
  */
@@ -7,19 +9,27 @@ package com.rent.steward.user;
 public class Person {
 
     private long mID; // unique serial id in db
+    @SerializedName("account")
     private String mAccount;
+    @SerializedName("name")
     private String mName;
+    @SerializedName("birth")
     private String mBirth;
+    @SerializedName("sex")
+    private String mSex; // m or f
 
     public Person() {
+        mAccount = "";
         mName = "";
         mBirth = "";
+        mSex = "";
     }
 
-    public Person(String account, String name, String birth) {
+    public Person(String account, String name, String birth, String sex) {
         this.mAccount = account;
         this.mName = name;
         this.mBirth = birth;
+        this.mSex = sex;
     }
 
     public Long getID() {
@@ -52,5 +62,13 @@ public class Person {
 
     public void setBirth(String birth) {
         this.mBirth = birth;
+    }
+
+    public String getSex() {
+        return mSex;
+    }
+
+    public void setSex(String sex) {
+        this.mSex = sex;
     }
 }
